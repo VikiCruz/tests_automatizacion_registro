@@ -1,15 +1,14 @@
 
 describe('Landing page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:4200/')
+    cy.visit('https://inlazetest.com/en/')
   })
 
   it("suscripcion exitosa", () => {
     cy.get('[data-cy="susbcriberBlog"]').type('test1@gmail.com')
     cy.get('[data-cy="btnSusbcriberBlog"]').click()
     
-    // cy.get('[aria-labelledby="swal2-title"]')
-    // .should('have.value', 'Successful subscription')
+
   })
 //   it("email invalido", () => {
 //     cy.getByData("email-input").type("tom")
