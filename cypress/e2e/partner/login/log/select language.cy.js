@@ -1,6 +1,6 @@
 describe('Register_languaje', () => {
   beforeEach(() => {
-    cy.visit('https://partner.inlazetest.com/en/')
+    cy.visit('https://partner.inlazetest.com/en/login')
     
   })
        //ES:
