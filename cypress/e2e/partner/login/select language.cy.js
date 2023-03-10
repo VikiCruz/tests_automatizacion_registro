@@ -1,4 +1,4 @@
-describe('Register_languaje', () => {
+describe('Login_languaje', () => {
   beforeEach(() => {
     cy.visit('https://partner.inlazetest.com/en/login')
     

@@ -1,4 +1,4 @@
-describe('Register', () => {
+describe('login', () => {
   beforeEach(() => {
     cy.visit('https://partner.inlazetest.com/en/login')  
   })
