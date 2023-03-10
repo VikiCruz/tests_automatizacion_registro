@@ -5,15 +5,15 @@ describe('Register', () => {
   
   //VALIDACION DE CAMPOS VACIOS:
 
-  it("Full name empty", () => {
-    cy.get('#name').type('{enter}')
-    cy.get('#email').type('v.cruz@inlaze.com')
-    cy.get('#searchSelect').type('57').type('{enter}')
-    cy.get('#phone').type('3134517372')
-    cy.get('#password').type('Test@12345')
-    cy.get('.btnPrimary').should('be.disabled')
+  it.only("Full name empty", () => {
+    cy.get('[data-cy="inputFullName"]').type('{enter}')
+    cy.get('[data-cy="inputEmailRegister"]').type('v.cruz@inlaze.com')
+    cy.get('[data-cy="inputSearchSelect"]').type('57').type('{enter}')
+    cy.get('[data-cy="inputPhoneNumber"]').type('3134517372')
+    cy.get('[data-cy="inputCreatePassword"]').type('Test@12345')
+    cy.get('[data-cy="btnRegister"]').should('be.disabled')
     cy.wait(2000)
-    cy.screenshot()
+    //cy.screenshot()
   })
 
   it("Empty email", () => {

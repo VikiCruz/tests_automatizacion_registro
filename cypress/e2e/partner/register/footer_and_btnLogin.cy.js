@@ -4,11 +4,11 @@ describe('footer and btn login form register', () => {
   })
 //BTN LOGIN:
     it("completed fields_btn login", () => {
-    cy.get('#name').type('nombre1 nombre2')
-    cy.get('#email').type('v.cruz@inlaze.com')
-    cy.get('#searchSelect').type('57').type('3134517372')
-    cy.get('#phone').type('3134517372')
-    cy.get('#password').type('Test@12345')
+    cy.get('[data-cy="inputFullName"]').type('nombre1 nombre2')
+    cy.get('[data-cy="inputEmailRegister"]').type('v.cruz@inlaze.com')
+    cy.get('[data-cy="inputSearchSelect"]').type('57').type('3134517372')
+    cy.get('[data-cy="inputPhoneNumber"]').type('3134517372')
+    cy.get('[data-cy="inputCreatePassword"]').type('Test@12345')
     cy.wait(2000)
     cy.get('.register__redirectLogin > a').click()
     cy.url().should('eq', 'https://partner.inlazetest.com/en/login')
