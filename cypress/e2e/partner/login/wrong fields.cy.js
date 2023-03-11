@@ -21,7 +21,7 @@ describe('Login', () => {
   }) 
 
   
-  it.only("unregistered Email", () => {
+  it("unregistered Email", () => {
     cy.get('#emailLogin').type('v@inlaze.com')
     cy.get('#passwordLogin').type('Test@12345')
     cy.get('.btnPrimary').click()

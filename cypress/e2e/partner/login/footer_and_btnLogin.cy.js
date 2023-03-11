@@ -16,15 +16,7 @@ describe('footer and btn login form register', () => {
       cy.url().should('eq', 'https://partner.inlazetest.com/en/')
       // cy.screenshot() 
       })
-
-                                                                                                         
-                                        //BTN LOGIN:
-                                              //FORGOT YOUR PASSWORD?
-                                                  // it.only("forgot your password", () => {
-                                                  // cy.get('.login__forgotPassword').click()
-                                                  // })
-                                                                                                           
-
+      
 //LINKS FOOTER:
     it("footer", () => {
     cy.wait(2000)
