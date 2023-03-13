@@ -52,7 +52,7 @@ describe('Login_reset password', () => {
     cy.get('.footerGenerateCode__textFaqs').click().should('be.visible')
   })
 
-  it.only("Back button", () => {
+  it("Back button", () => {
     cy.get('.login__forgotPassword').click()
     cy.get('.selectCodeMethod__contentBtnSelect > :nth-child(2) > span').click()
     cy.wait(2000)
@@ -60,4 +60,5 @@ describe('Login_reset password', () => {
     cy.get('.selectCodeMethod').should('exist')
   })
 
+  
 })

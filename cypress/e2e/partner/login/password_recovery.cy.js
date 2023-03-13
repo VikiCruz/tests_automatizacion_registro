@@ -72,7 +72,7 @@ describe('Login / password_recovery / WhatsApp', () => {
       cy.get(':nth-child(2) > .toast > .toast-body').should('exist')
           })
 
-it.only("empty code", () => {
+it("empty code", () => {
     cy.get('.login__forgotPassword').click()
     cy.get('.selectCodeMethod__contentBtnSelect > :nth-child(2) > span').click()
     cy.wait(2000)
@@ -82,6 +82,38 @@ it.only("empty code", () => {
       cy.get('#code').type('{enter}')
       cy.get('.enterValidationCode__form > .btn').should('be.disabled')
           })
+
+it("Resent code", () => {
+    cy.get('.login__forgotPassword').click()
+    cy.get('.selectCodeMethod__contentBtnSelect > :nth-child(2) > span').click()
+    cy.wait(2000)
+    cy.get('#email').type('v.cruz@inlaze.com')
+    cy.get('.enterEmail__form > .btnPrimary').click()
+      cy.wait(2000)
+      cy.get('.enterValidationCode > .btnBlackBorder').click()
+      cy.get('.selectCodeMethod').should('exist')
+          })
+
+it("Password - back", () => {
+  cy.get('.login__forgotPassword').click()
+  cy.get('.selectCodeMethod__contentBtnSelect > :nth-child(2) > span').click()
+  cy.wait(2000)
+  cy.get('#email').type('v.cruz@inlaze.com')
+  cy.get('.enterEmail__form > .btnPrimary').click()
+      cy.wait(2000)
+      cy.get('.passwordRecovery__closeModal').click()
+      cy.get('.enterEmail').should('exist')
+      })
+
+it.only("Password - Faqs", () => {
+  cy.get('.login__forgotPassword').click()
+  cy.get('.selectCodeMethod__contentBtnSelect > :nth-child(2) > span').click()
+  cy.wait(2000)
+  cy.get('#email').type('v.cruz@inlaze.com')
+  cy.get('.enterEmail__form > .btnPrimary').click()
+      cy.wait(2000)
+      cy.get('.footerGenerateCode__textFaqs').click().should('be.visible')
+      })
 })
 
 
