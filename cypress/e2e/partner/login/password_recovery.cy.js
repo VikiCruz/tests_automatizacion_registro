@@ -19,6 +19,7 @@ describe('Login / password_recovery / WhatsApp', () => {
             cy.get('.enterValidationCode__form > .btn').click()
             cy.wait(2000)
             cy.get(':nth-child(2) > .toast > .toast-body').should('exist')
+            cy.wait(6000)
           })
     })
 
@@ -33,6 +34,7 @@ describe('Login / password_recovery / WhatsApp', () => {
       cy.get('#code').type('codigoverificacion')
       cy.get('.enterValidationCode__form > .btn').click()
       cy.get(':nth-child(2) > .toast > .toast-body').should('exist')
+      cy.wait(6000)
           })
       
   it("Code type number", () => {
@@ -45,6 +47,7 @@ describe('Login / password_recovery / WhatsApp', () => {
       cy.get('#code').type(-6564654)
       cy.get('.enterValidationCode__form > .btn').click()
       cy.get(':nth-child(2) > .toast > .toast-body').should('exist')
+      cy.wait(6000)
           })
 
 
@@ -58,6 +61,7 @@ describe('Login / password_recovery / WhatsApp', () => {
       cy.get('#code').type('!"·$%&/()=?¡*¨^çÇ[]{};:_,.-<>@#~|')
       cy.get('.enterValidationCode__form > .btn').click()
       cy.get(':nth-child(2) > .toast > .toast-body').should('exist')
+      cy.wait(6000)
           })
 
   it("Code type string", () => {
@@ -70,6 +74,7 @@ describe('Login / password_recovery / WhatsApp', () => {
       cy.get('#code').type('ddkjfkdhfkjhjhuhguyg')
       cy.get('.enterValidationCode__form > .btn').click()
       cy.get(':nth-child(2) > .toast > .toast-body').should('exist')
+      cy.wait(6000)
           })
 
 it("empty code", () => {
@@ -81,6 +86,7 @@ it("empty code", () => {
       cy.wait(2000)
       cy.get('#code').type('{enter}')
       cy.get('.enterValidationCode__form > .btn').should('be.disabled')
+      cy.wait(6000)
           })
 
 it("Resent code", () => {
@@ -92,6 +98,7 @@ it("Resent code", () => {
       cy.wait(2000)
       cy.get('.enterValidationCode > .btnBlackBorder').click()
       cy.get('.selectCodeMethod').should('exist')
+      cy.wait(6000)
           })
 
 it("Password - back", () => {
@@ -103,9 +110,10 @@ it("Password - back", () => {
       cy.wait(2000)
       cy.get('.passwordRecovery__closeModal').click()
       cy.get('.enterEmail').should('exist')
+      cy.wait(6000)
       })
 
-it.only("Password - Faqs", () => {
+it("Password - Faqs", () => {
   cy.get('.login__forgotPassword').click()
   cy.get('.selectCodeMethod__contentBtnSelect > :nth-child(2) > span').click()
   cy.wait(2000)
@@ -113,6 +121,7 @@ it.only("Password - Faqs", () => {
   cy.get('.enterEmail__form > .btnPrimary').click()
       cy.wait(2000)
       cy.get('.footerGenerateCode__textFaqs').click().should('be.visible')
+      cy.wait(6000)
       })
 })
 

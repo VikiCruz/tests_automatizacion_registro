@@ -3,6 +3,7 @@ const { Client } = require('pg')
 
 
 module.exports = defineConfig({
+  projectId: 'evpsug',
   e2e: {
     setupNodeEvents(on, config) {
       

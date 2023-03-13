@@ -27,6 +27,7 @@ it("Password - SMS", () => {
   cy.wait(2000)             
   cy.get('.passwordRecovery > .btnPrimary').click()
   cy.url().should('eq', 'https://partner.inlazetest.com/en/login')
+  cy.wait(6000)
   })
 
 
@@ -50,6 +51,7 @@ it.only("Password - WhatsApp", () => {
   cy.wait(2000)             
   cy.get('.passwordRecovery > .btnPrimary').click()
   cy.url().should('eq', 'https://partner.inlazetest.com/en/login')
+  cy.wait(6000)
   })
 
 
