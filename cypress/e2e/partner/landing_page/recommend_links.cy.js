@@ -1,13 +1,14 @@
 
 describe('Landing page', () => {
   beforeEach(() => {
-    cy.visit('https://inlazetest.com/en/')
+    cy.visit('https://inlazetest.com/en/')  
   })
 
-  it("suscripcion exitosa", () => {
-    cy.get('[data-cy="homeEmailBeginning"]').type('test1@gmail.com')
-    cy.get('[data-cy="btnGetStarted"]').click()
-    
 
+  it.only('Subscribe_blog', function () {
+    cy.get('.homeCarousel__formEnterEmail > .form-floating > #homeEmailBeginning')
+    .click().type('vlc.cruz@inlaze.com')
+      cy.get('.homeCarousel__formEnterEmail > .btnPrimary').click()
   })
+
 })
