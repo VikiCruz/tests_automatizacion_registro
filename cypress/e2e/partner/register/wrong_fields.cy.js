@@ -11,8 +11,8 @@ describe('Register', () => {
     cy.get('#phone').type('3134517372')
     cy.get('#password').type('Test@12345')
     cy.get('.btnPrimary').should('be.disabled')
-    cy.wait(2000)
-    cy.screenshot()
+      cy.wait(2000)
+        cy.screenshot()
 })
 
   it("Email type number", () => {
@@ -22,8 +22,8 @@ describe('Register', () => {
     cy.get('#phone').type('3134517372')
     cy.get('#password').type('Test@12345')
     cy.get('.btnPrimary').should('be.disabled')
-    cy.wait(2000)
-    cy.screenshot()
+      cy.wait(2000)
+        cy.screenshot()
   }) 
 
     it("Email already registered", () => {
@@ -35,9 +35,9 @@ describe('Register', () => {
       cy.get('.btnPrimary').click({ force: true })
       cy.get('.swal2-popup').should('exist')
           .contains('There is a user in the system with that email')
-      cy.wait(2000)
-      cy.screenshot()
-      cy.get('.swal2-confirm').click()
+            cy.wait(2000)
+              cy.screenshot()
+                cy.get('.swal2-confirm').click()
       })
 
     it("Phone already registered", () => {
@@ -49,9 +49,9 @@ describe('Register', () => {
       cy.get('.btnPrimary').click({ force: true })
       cy.get('.swal2-popup').should('exist')
           .contains('There is a user in the system with that phone')
-      cy.wait(2000)
-      cy.screenshot()
-      cy.get('.swal2-confirm').click()
+            cy.wait(2000)
+              cy.screenshot()
+                cy.get('.swal2-confirm').click()
     })
     
     it("phone type string", () => {
@@ -61,8 +61,8 @@ describe('Register', () => {
     cy.get('#phone').type('hola')
     cy.get('#password').type('Test@12345')
     cy.get('.btnPrimary').should('be.disabled')
-    cy.wait(2000)
-    cy.screenshot()
+      cy.wait(2000)
+        cy.screenshot()
   }) 
 
   it("Wrong password", () => {
@@ -72,8 +72,8 @@ describe('Register', () => {
     cy.get('#phone').type('3134517372')
     cy.get('#password').type('Test12348')
     cy.get('.btnPrimary').should('be.disabled')
-    cy.wait(2000)
-    cy.screenshot()
+      cy.wait(2000)
+        cy.screenshot()
   })
 
 })
