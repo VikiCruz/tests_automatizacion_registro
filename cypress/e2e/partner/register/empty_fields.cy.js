@@ -1,6 +1,6 @@
 describe('Register', () => {
   beforeEach(() => {
-    cy.visit('https://partner.inlazetest.com/en/')  
+    cy.visit(Cypress.env('register_url'))
   })
   
   //VALIDACION DE CAMPOS VACIOS:

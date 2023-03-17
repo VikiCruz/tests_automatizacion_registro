@@ -2,6 +2,8 @@ const { defineConfig } = require("cypress");
 const { Client } = require('pg')
 
 
+
+
 module.exports = defineConfig({
   projectId: 'evpsug',
   e2e: {
@@ -25,6 +27,18 @@ module.exports = defineConfig({
       })
     },
   },
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "env" :
+  {
+      "landing_base_url" :  "https://inlazetest.com/",
+      "register_url" : "https://partner.inlazetest.com/en/",
+      "login_url" :    "https://partner.inlazetest.com/en/login",
+      
+      "fullname" : "QA Inlaze",
+      "email" : "v.cruz@inlaze.com",
+      "searchSelect" : "57",
+      "phone" : "3134517372",
+      "password" : "Test@12345"    
+    },
 });
 
