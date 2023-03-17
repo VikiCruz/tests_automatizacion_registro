@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
+const faker = require("faker");
+import { faker } from '@faker-js/faker';
 const { Client } = require('pg')
-
-
 
 
 module.exports = defineConfig({
