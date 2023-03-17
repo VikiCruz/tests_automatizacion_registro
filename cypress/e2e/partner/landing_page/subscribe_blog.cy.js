@@ -1,11 +1,15 @@
+
+let firstName = faker.Name.findName(); // Variable declaration
+
+
 describe('Landing / Subscribe_blog', () => {
   beforeEach(() => {
     cy.visit(Cypress.env('landing_base_url'))   
   })
-
-it("Subscribe_blog", () => {
-  // cy.get('[data-cy="susbcriberBlog"]').click().type(Cypress.env('email'))
   
+it.only("Subscribe_blog", () => {
+  // cy.get('[data-cy="susbcriberBlog"]').click().type(Cypress.env('email'))
+  cy.get('[data-cy="susbcriberBlog"]').click().type(firstName)
   cy.get('[data-cy="btnSusbcriberBlog"]').click()
   cy.wait(2000)
     cy.get('.swal2-popup').should('exist')
@@ -41,7 +45,7 @@ it("Subscribe_blog", () => {
     cy.get('[data-cy="btnSusbcriberBlog"]').should('be.disabled')
   })
 
-  it.only("Empty email", () => {
+  it("Empty email", () => {
       cy.get('[data-cy="susbcriberBlog"]').type('{enter}')
       cy.get('[data-cy="btnSusbcriberBlog"]').should('be.visible')
       cy.url().should('eq', 'https://inlazetest.com/en/')
