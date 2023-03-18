@@ -1,15 +1,10 @@
-
-let firstName = faker.Name.findName(); // Variable declaration
-
-
 describe('Landing / Subscribe_blog', () => {
   beforeEach(() => {
     cy.visit(Cypress.env('landing_base_url'))   
   })
   
-it.only("Subscribe_blog", () => {
-  // cy.get('[data-cy="susbcriberBlog"]').click().type(Cypress.env('email'))
-  cy.get('[data-cy="susbcriberBlog"]').click().type(firstName)
+it("Subscribe_blog", () => {
+  cy.get('[data-cy="susbcriberBlog"]').click().type(Cypress.env('email'))
   cy.get('[data-cy="btnSusbcriberBlog"]').click()
   cy.wait(2000)
     cy.get('.swal2-popup').should('exist')
@@ -17,7 +12,7 @@ it.only("Subscribe_blog", () => {
   })
 
 
-  it("Email already registered ", () => {
+  it.only("Email already registered ", () => {
     cy.get('[data-cy="susbcriberBlog"]').click().type(Cypress.env('email'))
     cy.get('[data-cy="btnSusbcriberBlog"]').click()
       cy.wait(2000)

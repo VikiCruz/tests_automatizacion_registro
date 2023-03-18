@@ -1,6 +1,6 @@
-describe('Register_languaje', () => {
+describe('Landing / languaje', () => {
   beforeEach(() => {
-    cy.visit('register_url')
+    cy.visit(Cypress.env('landing_base_url'))   
     
   })
        //ES:
@@ -33,8 +33,9 @@ describe('Register_languaje', () => {
 
 
         //Logo:
-          it("Logo", () => {
+          it.only("Logo", () => {
             cy.wait(2000)
-            cy.get('.header__containerLogo').click()
+            cy.get('.navigation > [data-cy="headerLogo"]').click()
+            cy.url().should('eq', 'https://inlazetest.com/en/')
             })
 })

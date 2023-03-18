@@ -1,6 +1,6 @@
 describe('Landing / header', () => {
   beforeEach(() => {
-    cy.visit('https://inlazetest.com/en/')
+    cy.visit(Cypress.env('landing_base_url'))   
     
   })
 
